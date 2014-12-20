@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
-
+import android.view.View;
 
 
 public class MainActivity extends Activity {
@@ -30,7 +30,10 @@ public class MainActivity extends Activity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
+    public void clickButton(View view) {
+        // Do something in response to button
+        startTestingActivity();
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
