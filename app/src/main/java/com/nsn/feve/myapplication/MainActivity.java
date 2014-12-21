@@ -2,11 +2,14 @@ package com.nsn.feve.myapplication;
 
 import android.app.Activity;
 import android.content.ComponentName;
+import android.content.Context;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
 import android.view.View;
+import android.widget.TextView;
 
 
 public class MainActivity extends Activity {
@@ -16,6 +19,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         startTestingActivity();
+        FillData();
     }
 
     public void startTestingActivity() {
@@ -25,6 +29,21 @@ public class MainActivity extends Activity {
         startActivity(i);
     }
 
+    public void FillData() {
+        TextView textView1 = (TextView) findViewById(R.id.textView1);
+        TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+
+        String info="\nPhone Details:";
+        String IMEINumber=tm.getDeviceId();
+        String Line1Number=tm.getLine1Number();
+
+        String WholeText=info;
+        WholeText+="\nIMEINumber: "+IMEINumber;
+        WholeText+="\nPhoneNumber: "+Line1Number;
+
+
+        textView1.setText(WholeText);
+    }
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
