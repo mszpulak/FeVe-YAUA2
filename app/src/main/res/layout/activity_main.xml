@@ -3,7 +3,8 @@
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:id="@+id/RelativeLayout1">
 
 
 
@@ -13,7 +14,8 @@
         android:layout_height="fill_parent"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:weightSum="1">
 
         <Button
             android:layout_width="fill_parent"
@@ -25,13 +27,322 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
 
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Button2"
+            android:onClick="clickRefreshButton"
+            android:id="@+id/button2"
+            android:layout_gravity="center_horizontal" />
+
         <TextView
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/textView1"
-            android:layout_gravity="center_horizontal"
-            android:text="sfds" />
+            android:textSize="12dp"
+            android:layout_weight="0"
+            android:layout_gravity="bottom" />
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bgColor2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="IMEI: "
+                android:id="@+id/IMEItext"
+                android:layout_column="0"
+                android:layout_gravity="left" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:id="@+id/IMEItext2"
+                android:layout_column="1"
+                android:layout_weight="0" />
+        </TableRow>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bgColor">
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="IMSI: "
+                android:id="@+id/IMSItext"
+                android:layout_column="0"
+                android:layout_gravity="left" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:id="@+id/IMSItext2"
+                android:layout_column="1"
+                android:layout_weight="0"
+                android:layout_gravity="left" />
+        </TableRow>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/TableLayout1"
+            android:orientation="horizontal"
+            android:stretchColumns="*"
+            android:shrinkColumns="1,3,5"
+            >
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bgColor2">
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MCC: "
+                    android:id="@+id/MCCtext"
+                    android:layout_column="0"
+                    android:layout_gravity="left"
+                    android:layout_weight="0"
+                    android:autoText="false"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:id="@+id/MCCtext2"
+                    android:layout_column="1"
+                    android:layout_weight="0"
+                    android:textSize="14dp"
+                    android:singleLine="true"
+                    android:layout_gravity="left" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" MNC: "
+                    android:id="@+id/MNCtext"
+                    android:layout_column="2"
+                    android:layout_weight="0"
+                    android:textSize="14dp"
+                    android:singleLine="true"
+                    android:layout_gravity="left" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:id="@+id/MNCtext2"
+                    android:layout_column="3"
+                    android:layout_gravity="left"
+                    android:layout_weight="0"
+                    android:textSize="14dp"
+                    android:singleLine="true" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bgColor">
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Operator: "
+                    android:id="@+id/Operator"
+                    android:layout_column="0"
+                    android:layout_gravity="left"
+                    android:singleLine="true"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:id="@+id/operator2"
+                    android:layout_column="1"
+                    android:layout_weight="0"
+                    android:singleLine="true"
+                    android:layout_gravity="left" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bgColor2">
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CellID: "
+                    android:id="@+id/CellIDtext"
+                    android:layout_column="0"
+                    android:textSize="14dp"
+                    android:layout_weight="0"
+                    android:layout_gravity="left"
+                    android:singleLine="true"
+                    android:gravity="left" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:id="@+id/CellIDtext2"
+                    android:layout_column="1"
+                    android:textSize="14dp"
+                    android:layout_weight="0"
+                    android:singleLine="true"
+                    android:layout_gravity="left" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" LAC: "
+                    android:id="@+id/LACtext"
+                    android:textSize="14dp"
+                    android:layout_weight="0"
+                    android:layout_column="2"
+                    android:singleLine="true"
+                    android:layout_gravity="left" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:id="@+id/LACtext2"
+                    android:layout_column="3"
+                    android:textSize="14dp"
+                    android:layout_weight="0"
+                    android:singleLine="true"
+                    android:layout_gravity="left" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" PSC: "
+                    android:id="@+id/PSCtext"
+                    android:textSize="14dp"
+                    android:layout_weight="0"
+                    android:layout_column="4"
+                    android:singleLine="true"
+                    android:layout_gravity="left" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:id="@+id/PSCtext2"
+                    android:layout_column="5"
+                    android:textSize="14dp"
+                    android:layout_weight="0"
+                    android:layout_gravity="left"
+                    android:singleLine="true"
+                    android:autoText="false" />
+
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bgColor">
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RSSI:"
+                    android:id="@+id/RSSItext"
+                    android:layout_column="0"
+                    android:layout_gravity="left"
+                    android:singleLine="true"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:id="@+id/RSSItextValue"
+                    android:layout_column="1"
+                    android:layout_weight="0"
+                    android:singleLine="true"
+                    android:layout_gravity="left" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RSRP:"
+                    android:id="@+id/RSRPsignal"
+                    android:layout_column="0"
+                    android:layout_gravity="left"
+                    android:singleLine="true"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:id="@+id/RSRPsignalVal"
+                    android:layout_column="1"
+                    android:layout_weight="0"
+                    android:singleLine="true"
+                    android:layout_gravity="left" />
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bgColor2">
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RSRQ:"
+                    android:id="@+id/RSRQsignal"
+                    android:layout_column="0"
+                    android:layout_gravity="left"
+                    android:singleLine="true"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:id="@+id/RSRQsignalVal"
+                    android:layout_column="1"
+                    android:layout_weight="0"
+                    android:singleLine="true"
+                    android:layout_gravity="left" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RSSNR:"
+                    android:id="@+id/RSRSNRsignal"
+                    android:layout_column="0"
+                    android:layout_gravity="left"
+                    android:singleLine="true"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:id="@+id/RSSNRsignalVal"
+                    android:layout_column="1"
+                    android:layout_weight="0"
+                    android:singleLine="true"
+                    android:layout_gravity="left" />
+
+            </TableRow>
+
+        </TableLayout>
 
     </LinearLayout>
 

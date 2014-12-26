@@ -4,5 +4,7 @@
     <string name="app_name">FeVe YAUApp</string>
     <string name="ButtonMain">TestingOptions</string>
     <string name="action_settings">Settings</string>
-
+    <string name="Button2">Refresh</string>
+    <string name="bgColor">#ffefefef</string>
+    <string name="bgColor2">#ffcbcbcb</string>
 </resources>
