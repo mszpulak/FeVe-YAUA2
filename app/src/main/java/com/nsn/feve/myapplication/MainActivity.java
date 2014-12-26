@@ -121,11 +121,20 @@ public class MainActivity extends Activity {
             if (intCellID!=INVALID){
                 CellID.setText(Integer.toString(intCellID));
             }
+            else{
+                CellID.setText("-");
+            }
             if (GsmCellLocationObject.getLac()!=INVALID) {
                 LAC.setText(Integer.toString(GsmCellLocationObject.getLac()));
             }
-            if (GsmCellLocationObject.getPsc()!=INVALID) {
+            else {
+                LAC.setText("-");
+            }
+            if (GsmCellLocationObject.getPsc()!=INVALID & GsmCellLocationObject.getPsc()!=-1) {
                 PSC.setText(Integer.toString(GsmCellLocationObject.getPsc()));
+            }
+            else {
+                PSC.setText("-");
             }
             Log.i("GsmCellLocation",GsmCellLocationObject.toString());
         }
@@ -330,6 +339,9 @@ public class MainActivity extends Activity {
                             Log.w("INVALIDLteRsrp",sig.toString());
                         }
                     }
+                    else {
+                        //RSRPsignalVal.setText("-");
+                    }
                     if (mthd.getName().equals("getLteRsrq")) {
                         Object  sig=mthd.invoke(signal);
                         Log.i("LteRsrq",sig.toString());
@@ -340,6 +352,9 @@ public class MainActivity extends Activity {
                             Log.w("INVALIDLteRsrq",sig.toString());
                         }
 
+                    }
+                    else{
+                        //RSRQsignalVal.setText("-");
                     }
                     if (mthd.getName().equals("getLteRssnr")) {
                         Object  sig=mthd.invoke(signal);
@@ -352,9 +367,15 @@ public class MainActivity extends Activity {
                         }
 
                     }
+                    else {
+                        //RSSNRsignalVal.setText("-");
+                    }
                     if (signal.getGsmSignalStrength()!=99) {
                         RSSItextValue.setText(Integer.toString(2 * signal.getGsmSignalStrength() - 113));
-                        //Log.i("LteRssi",Integer.toString(2*signal.getGsmSignalStrength()-113));
+                        Log.i("LteRssi",Integer.toString(2*signal.getGsmSignalStrength()-113));
+                    }
+                    else {
+                        RSSItextValue.setText("-");
                     }
 
                 }
