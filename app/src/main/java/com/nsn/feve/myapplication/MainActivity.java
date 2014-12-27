@@ -41,6 +41,17 @@ public class MainActivity extends Activity {
         //FillCellInfo();
         clickRefreshButton(null);
         //startTestingActivity();
+
+        Bundle extras=getIntent().getExtras();
+        if (extras!=null){
+            if (extras.containsKey("runMethod")) {
+                int passedText = extras.getInt("runMethod");
+
+            }
+                Log.e("extras","");
+
+
+        }
     }
     @Override
     protected void onResume() {
@@ -50,7 +61,7 @@ public class MainActivity extends Activity {
         //FillCellLocation();
         //FillIMSIIMEI();
         //FillCellInfo();
-        clickRefreshButton(null);
+        //clickRefreshButton(null);
         //startTestingActivity();
     }
     public void startTestingActivity() {
