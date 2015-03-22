@@ -7,6 +7,10 @@
     android:id="@+id/RelativeLayout1">
 
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView" >
 
     <LinearLayout
         android:orientation="vertical"
@@ -16,6 +20,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:weightSum="1">
+
+
 
         <Button
             android:layout_width="fill_parent"
@@ -27,12 +33,21 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
 
+
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Button2"
-            android:onClick="clickRefreshButton"
-            android:id="@+id/button2"
+            android:text="@string/Button3"
+            android:onClick="clickToggleButton"
+            android:id="@+id/button3"
+            android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Button4"
+            android:onClick="clickCallAR"
+            android:id="@+id/button4"
             android:layout_gravity="center_horizontal" />
 
         <TextView
@@ -64,7 +79,7 @@
                 android:layout_column="1"
                 android:layout_weight="0" />
         </TableRow>
-        <TableRow
+                <TableRow
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@color/bgColor">
@@ -83,6 +98,29 @@
                 android:layout_height="wrap_content"
                 android:text="-"
                 android:id="@+id/IMSItext2"
+                android:layout_column="1"
+                android:layout_weight="0"
+                android:layout_gravity="left" />
+        </TableRow>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bgColor">
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PhoneNumber: "
+                android:id="@+id/PhNumbertext"
+                android:layout_column="0"
+                android:layout_gravity="left" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:id="@+id/PhNumbertext2"
                 android:layout_column="1"
                 android:layout_weight="0"
                 android:layout_gravity="left" />
@@ -175,6 +213,58 @@
                     android:layout_gravity="left" />
             </TableRow>
 
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bgColor2">
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Technology: "
+                    android:id="@+id/Technology"
+                    android:layout_column="0"
+                    android:layout_gravity="left"
+                    android:singleLine="true"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:id="@+id/Technology2"
+                    android:layout_column="1"
+                    android:layout_weight="0"
+                    android:singleLine="true"
+                    android:layout_gravity="left" />
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bgColor">
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="IP address: "
+                    android:id="@+id/IP"
+                    android:layout_column="0"
+                    android:layout_gravity="left"
+                    android:singleLine="true"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:id="@+id/IP2"
+                    android:layout_column="1"
+                    android:layout_weight="0"
+                    android:singleLine="true"
+                    android:layout_gravity="left" />
+            </TableRow>
             <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -343,7 +433,50 @@
             </TableRow>
 
         </TableLayout>
-
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/textView2"
+            android:textSize="12dp"
+            android:layout_weight="0"
+            android:layout_gravity="bottom" />
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Button5"
+            android:onClick="clickSamsungServiceMenu"
+            android:id="@+id/button5"
+            android:layout_gravity="center_horizontal" />
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Button6"
+            android:onClick="clickSamsungRFBandMenu"
+            android:id="@+id/button6"
+            android:layout_gravity="center_horizontal" />
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Button7"
+            android:onClick="clickSamsungLockFreqMenu"
+            android:id="@+id/button7"
+            android:layout_gravity="center_horizontal" />
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Button9"
+            android:onClick="clickSamsungWCDMALockFreqMenu"
+            android:id="@+id/button9"
+            android:layout_gravity="center_horizontal" />
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Button8"
+            android:onClick="clickSamsungR99Menu"
+            android:id="@+id/button8"
+            android:layout_gravity="center_horizontal" />
     </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>
